@@ -112,7 +112,7 @@ BUILD SUCCESSFUL in 0s
 
 ## 🎱 프로그래밍 요구사항
 
-- JDK 8 또는 11 버전에서 실행 가능해야 한다. **JDK 8 또는 11에서 정상 동작하지 않을 경우 0점 처리**한다.
+- JDK 11 버전에서 실행 가능해야 한다. **JDK 11에서 정상 동작하지 않을 경우 0점 처리**한다.
 - 프로그램을 실행하는 시작점은 `Application`의 `main()`이다.
 - `build.gradle` 파일을 변경할 수 없고, 외부 라이브러리를 사용하지 않는다.
 - [Java 코드 컨벤션 가이드](https://github.com/woowacourse/woowacourse-docs/tree/main/styleguide/java)를 준수하며 프로그래밍한다.
