@@ -29,6 +29,10 @@ public class VendingMachine {
         inputPrice += price;
     }
 
+    public LinkedHashMap<Coin, Integer> getCoins() {
+        return (LinkedHashMap) coins.clone();
+    }
+
     private boolean isGoodsOverlapped(List<Goods> goods) {
         return goods.stream()
                 .map(Goods::getName).distinct()
