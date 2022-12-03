@@ -40,14 +40,25 @@ public class MachineCoin {
 
     public CoinStatus returnCoin(int money) {
         EnumMap<Coin, Integer> result = new EnumMap<>(Coin.class);
+        int returnMoney = calculateReturnMoney(money);
         List<Coin> coins = Coin.getCoins();
         for (Coin coin : coins) {
-            int coinCount = coin.countOfCoinMakeByMoney(money);
+            int coinCount = coin.countOfCoinMakeByMoney(returnMoney);
             if (coinCount != NONE) {
                 result.put(coin, coinCount);
-                money = calculateRemainMoney(money, coin, coinCount);
+                returnMoney = calculateRemainMoney(returnMoney, coin, coinCount);
             }
         }
         return new CoinStatus(result);
+    }
+
+    private int calculateReturnMoney(int money) {
+        int totalMoney = machineCoin.keySet().stream()
+                .mapToInt(coin -> coin.getAmount()*machineCoin.get(coin))
+                .sum();
+        if (totalMoney<money) {
+            return totalMoney;
+        }
+        return money;
     }
 }
