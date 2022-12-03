@@ -13,7 +13,7 @@ public class InitialCoinCreator {
     private final List<Coin> coinTypes;
     private LinkedHashMap<Coin, Integer> coins;
 
-    InitialCoinCreator(List<Coin> coinTypes) {
+    public InitialCoinCreator(List<Coin> coinTypes) {
         this.coinTypes = sortCoinType(coinTypes);
     }
 

@@ -39,4 +39,12 @@ public class Goods {
     private String priceMinimumErrorMessage() {
         return String.format(ExceptionMessage.MIN_PRICE_ERROR_FORMAT.getMessage(), MIN_PRICE);
     }
+
+    public boolean isEqualName(String name) {
+        return this.name.equals(name);
+    }
+
+    public String getName() {
+        return name;
+    }
 }

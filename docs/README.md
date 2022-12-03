@@ -25,9 +25,9 @@
     - 가격 : 10원 단위 이어야 한다.
     - 가격 : 100원 보다는 크거나 같아야 한다.
     - 이름 : 빈칸이 아니어야 한다.
-  - [ ] isEqualName()
+  - [x] isEqualName()
     - 이름이 일치하는지 확인
-  - [ ] getName()
+  - [x] getName()
 
 - VendingMachine
   - [ ] 초기 생성 조건 확인 VendingMachine (초기 금액, 상품들)
