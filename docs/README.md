@@ -63,7 +63,7 @@
 - InputView
   - [x] 자판기 보유 금액 입력 #readHoldingAmount()
   - [ ] 상품명과 가격, 수량 입력 #readGoods()
-  - [ ] 투입 금액 입력 #readInputAmount()
+  - [x] 투입 금액 입력 #readInputAmount()
   - [ ] 구매할 상품명 입력 #readGoodsName()
 
 - OutputView

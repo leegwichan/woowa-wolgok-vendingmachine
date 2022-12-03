@@ -7,7 +7,8 @@ import java.util.List;
 
 public class InputView {
 
-    private static final String REQUEST_HOLDING_AMOUNT = "자판기가 보유하고 있는 금액을 입력해 주세요.";
+    private static final String REQUEST_HOLDING_AMOUNT = "\n자판기가 보유하고 있는 금액을 입력해 주세요.";
+    private static final String REQUEST_INPUT_AMOUNT = "\n투입 금액을 입력해 주세요.";
 
     public static int readHoldingAmount() {
         print(REQUEST_HOLDING_AMOUNT);
@@ -19,7 +20,8 @@ public class InputView {
     }
 
     public static int readInputAmount() {
-        return 0;
+        print(REQUEST_INPUT_AMOUNT);
+        return readPositiveInteger();
     }
 
     public static String readGoodsName() {
