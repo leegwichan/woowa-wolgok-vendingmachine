@@ -45,10 +45,14 @@ public class VendingMachine {
         if (goods.getPrice() > inputPrice) {
             throw new IllegalArgumentException(ExceptionMessage.GOODS_OVER_PRICE.getMessage());
         }
+        if (this.goods.get(goods) <= 0) {
+            throw new IllegalArgumentException(ExceptionMessage.GOODS_SOLD_OUT.getMessage());
+        }
+        this.goods.put(goods, this.goods.get(goods) - 1);
         inputPrice -= goods.getPrice();
     }
 
-    private boolean isGoodsOverlapped(List<Goods> goods) {
+    private boolean isGoodsOverlapped(Set<Goods> goods) {
         return goods.stream()
                 .map(Goods::getName).distinct()
                 .count() != goods.size();

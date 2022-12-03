@@ -68,6 +68,18 @@ public class VendingMachineTest {
     }
 
     @Test
+    void buyGoodsTest_SoldOut() {
+        VendingMachine vendingMachine = newVendingMachine();
+        vendingMachine.enrollGoods(NORMAL_GOODS);
+        vendingMachine.addInputPrice(500);
+        vendingMachine.buyGoods("콜라");
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            vendingMachine.buyGoods("콜라");
+        });
+    }
+
+    @Test
     void buyGoodsTest_NormalCase() {
         VendingMachine vendingMachine = newVendingMachine();
         vendingMachine.enrollGoods(NORMAL_GOODS);
