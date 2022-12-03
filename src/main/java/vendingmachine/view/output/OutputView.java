@@ -16,4 +16,8 @@ public class OutputView {
     public static void printChanges(LinkedHashMap<Coin, Integer> changes) {
 
     }
+
+    public static void printErrorMessage(Exception exception) {
+        System.out.println(exception.getMessage());
+    }
 }

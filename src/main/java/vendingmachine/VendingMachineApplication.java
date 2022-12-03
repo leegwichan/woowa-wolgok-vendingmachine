@@ -9,6 +9,7 @@ import vendingmachine.view.input.InputView;
 import vendingmachine.view.output.OutputView;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Callable;
 
 public class VendingMachineApplication {
 
@@ -16,12 +17,12 @@ public class VendingMachineApplication {
     private VendingMachine vendingMachine;
 
     public void run() {
-        createVendingMachine();
+        readRepeatWhenThrow(() -> createVendingMachine());
         printHoldingCoins();
-        enrollGoods();
-        inputAmounts();
+        readRepeatWhenThrow(() -> enrollGoods());
+        readRepeatWhenThrow(() -> inputAmounts());
         while (!vendingMachine.isDoneBuying()) {
-            buyGoods();
+            readRepeatWhenThrow(() -> buyGoods());
         }
         printChanges();
     }
@@ -54,5 +55,16 @@ public class VendingMachineApplication {
 
     private void printChanges() {
         OutputView.printChanges(vendingMachine.getChanges());
+    }
+
+    private void readRepeatWhenThrow(Runnable method) {
+        while (true) {
+            try {
+                method.run();
+                return;
+            } catch (IllegalArgumentException exception) {
+                OutputView.printErrorMessage(exception);
+            }
+        }
     }
 }
