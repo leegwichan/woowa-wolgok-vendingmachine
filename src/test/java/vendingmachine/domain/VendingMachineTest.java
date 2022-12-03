@@ -1,5 +1,6 @@
 package vendingmachine.domain;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
@@ -36,5 +37,38 @@ public class VendingMachineTest {
         assertThrows(IllegalArgumentException.class, () -> {
             vendingMachine.enrollGoods(overlappedGoods);
         });
+    }
+
+    @Test
+    void buyGoodsTest_WhenNotExist() {
+        VendingMachine vendingMachine = newVendingMachine();
+        vendingMachine.enrollGoods(NORMAL_GOODS);
+        vendingMachine.addInputPrice(500);
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            vendingMachine.buyGoods("사탕");
+        });
+    }
+
+    @Test
+    void buyGoodsTest_OverPrice() {
+        VendingMachine vendingMachine = newVendingMachine();
+        vendingMachine.enrollGoods(NORMAL_GOODS);
+        vendingMachine.addInputPrice(50);
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            vendingMachine.buyGoods("콜라");
+        });
+    }
+
+    @Test
+    void buyGoodsTest_NormalCase() {
+        VendingMachine vendingMachine = newVendingMachine();
+        vendingMachine.enrollGoods(NORMAL_GOODS);
+        vendingMachine.addInputPrice(500);
+
+        vendingMachine.buyGoods("콜라");
+
+        assertThat(vendingMachine.getInputPrice()).isEqualTo(350);
     }
 }

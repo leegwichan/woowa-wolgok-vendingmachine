@@ -29,8 +29,21 @@ public class VendingMachine {
         inputPrice += price;
     }
 
-    public LinkedHashMap<Coin, Integer> getCoins() {
-        return (LinkedHashMap) coins.clone();
+    public void buyGoods(String goodsName) {
+        for (Goods singleGoods : goods) {
+            if (singleGoods.isEqualName(goodsName)) {
+                buyGoods(singleGoods);
+                return;
+            }
+        }
+        throw new IllegalArgumentException(ExceptionMessage.GOODS_NOT_EXIST.getMessage());
+    }
+
+    private void buyGoods(Goods goods) {
+        if (goods.getPrice() > inputPrice) {
+            throw new IllegalArgumentException(ExceptionMessage.GOODS_OVER_PRICE.getMessage());
+        }
+        inputPrice -= goods.getPrice();
     }
 
     private boolean isGoodsOverlapped(List<Goods> goods) {
@@ -41,5 +54,13 @@ public class VendingMachine {
 
     private boolean isGoodsEnrolled() {
         return this.goods != null;
+    }
+
+    public LinkedHashMap<Coin, Integer> getCoins() {
+        return (LinkedHashMap) coins.clone();
+    }
+
+    public int getInputPrice() {
+        return inputPrice;
     }
 }
