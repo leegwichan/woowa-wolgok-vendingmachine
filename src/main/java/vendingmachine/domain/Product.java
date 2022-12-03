@@ -38,7 +38,7 @@ public class Product {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, price);
+        return Objects.hash(name);
     }
 
     @Override
@@ -46,8 +46,7 @@ public class Product {
         if (!(obj instanceof Product)) {
             return false;
         }
-        if (((Product) obj).name.equals(this.name)
-                && ((Product) obj).price == this.price) {
+        if (((Product) obj).name.equals(this.name)) {
             return true;
         }
         return false;
