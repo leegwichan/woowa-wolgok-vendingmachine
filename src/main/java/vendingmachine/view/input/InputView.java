@@ -9,6 +9,7 @@ public class InputView {
 
     private static final String REQUEST_HOLDING_AMOUNT = "\n자판기가 보유하고 있는 금액을 입력해 주세요.";
     private static final String REQUEST_INPUT_AMOUNT = "\n투입 금액을 입력해 주세요.";
+    private static final String REQUEST_GOODS_NAME = "구매할 상품명을 입력해 주세요.";
 
     public static int readHoldingAmount() {
         print(REQUEST_HOLDING_AMOUNT);
@@ -25,7 +26,8 @@ public class InputView {
     }
 
     public static String readGoodsName() {
-        return null;
+        print(REQUEST_GOODS_NAME);
+        return read();
     }
 
     private static int readPositiveInteger() {
@@ -38,10 +40,14 @@ public class InputView {
 
     private static int readNumber() {
         try {
-            return Integer.parseInt(Console.readLine());
+            return Integer.parseInt(read());
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException(ExceptionMessage.NOT_INTEGER.getMessage());
         }
+    }
+
+    private static String read() {
+        return Console.readLine();
     }
 
     private static void print(String message) {
