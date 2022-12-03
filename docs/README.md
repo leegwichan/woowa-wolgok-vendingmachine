@@ -21,16 +21,16 @@
   - [x] getAmount()
 
 - Goods
-  - [ ] 생성시 조건 확인 #Goods(이름, 가격)
+  - [x] 생성시 조건 확인 #Goods(이름, 가격)
     - 가격 : 10원 단위 이어야 한다.
     - 가격 : 100원 보다는 크거나 같아야 한다.
+    - 이름 : 빈칸이 아니어야 한다.
   - [ ] isEqualName()
     - 이름이 일치하는지 확인
   - [ ] getName()
 
 - VendingMachine
-  - [ ] 초기 생성 조건 확인 VendingMachine (초기 금액, 상품들, )
-    - 초기 금액이 10으로 나누어 떨어지는지
+  - [ ] 초기 생성 조건 확인 VendingMachine (초기 금액, 상품들)
     - 상품의 이름이 중복되는지
   - [ ] 보유 동전 주기 #getCoins()
   - [ ] 구매 기능 #buyGoods()
