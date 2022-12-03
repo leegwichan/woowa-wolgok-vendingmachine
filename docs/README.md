@@ -32,7 +32,7 @@
 - [ ] 남은 금액 출력 -> printRemainMoney
 
 ### 동전 객체 -> Coin Enum
-- [ ] 동전 객체 생성 - from
+- [x] 동전 객체 생성 - from
 
 ### 자판기 객체 -> VendingMachine
 - [ ] 남은 금액 현황을 반환하는 기능 -> showRemainMoney
