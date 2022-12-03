@@ -66,4 +66,8 @@ public class InputView {
         validIsNumber(money);
         return Integer.parseInt(money);
     }
+
+    public String readProductName() {
+        return Console.readLine();
+    }
 }
