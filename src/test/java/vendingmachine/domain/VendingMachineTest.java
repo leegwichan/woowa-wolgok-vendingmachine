@@ -89,4 +89,34 @@ public class VendingMachineTest {
 
         assertThat(vendingMachine.getInputPrice()).isEqualTo(350);
     }
+
+    @Test
+    void isDoneBuyingTest_WhenSoldOut() {
+        VendingMachine vendingMachine = newVendingMachine();
+        vendingMachine.enrollGoods(NORMAL_GOODS);
+        vendingMachine.addInputPrice(500);
+
+        vendingMachine.buyGoods("콜라");
+        vendingMachine.buyGoods("사이다");
+
+        assertThat(vendingMachine.isDoneBuying()).isEqualTo(true);
+    }
+
+    @Test
+    void isDoneBuyingTest_WhenInputPriceLow() {
+        VendingMachine vendingMachine = newVendingMachine();
+        vendingMachine.enrollGoods(NORMAL_GOODS);
+        vendingMachine.addInputPrice(50);
+
+        assertThat(vendingMachine.isDoneBuying()).isEqualTo(true);
+    }
+
+    @Test
+    void isDoneBuyingTest_WhenFalse() {
+        VendingMachine vendingMachine = newVendingMachine();
+        vendingMachine.enrollGoods(NORMAL_GOODS);
+        vendingMachine.addInputPrice(150);
+
+        assertThat(vendingMachine.isDoneBuying()).isEqualTo(false);
+    }
 }

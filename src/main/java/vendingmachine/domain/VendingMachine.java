@@ -52,6 +52,23 @@ public class VendingMachine {
         inputPrice -= goods.getPrice();
     }
 
+    public boolean isDoneBuying() {
+        return inputPrice < minPriceOfBuyingGoods() || isSoldOut();
+    }
+
+    private int minPriceOfBuyingGoods() {
+        return goods.keySet().stream()
+                .filter(goods1 -> this.goods.get(goods1) != 0)
+                .mapToInt(Goods::getPrice)
+                .min().orElse(0);
+    }
+
+    private boolean isSoldOut() {
+        return goods.values().stream()
+                .map(count -> count == 0)
+                .reduce(true, Boolean::logicalAnd);
+    }
+
     private boolean isGoodsOverlapped(Set<Goods> goods) {
         return goods.stream()
                 .map(Goods::getName).distinct()
