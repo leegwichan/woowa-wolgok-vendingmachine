@@ -51,7 +51,8 @@
 ### 재고 객체 -> Stock
 - [x] 상품 수량을 추가하는 기능 -> addStock
 - [ ] 상품 수량을 감소하는 기능 -> minusStock
-- [ ] 상품의 존재 여부를 확인하는 기능 -> isExists
+- [x] 상품을 반환하는 기능 -> findByName
+  - [x] 상품의 존재 여부를 확인하는 기능 -> isExists
 
 ### 랜덤 수 생성 -> Random
 - [ ] 금액에 해당하는 동전을 무작위로 생성하는 기능 -> CreateRandomNumbers
