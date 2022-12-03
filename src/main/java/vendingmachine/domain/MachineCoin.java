@@ -10,7 +10,11 @@ public class MachineCoin {
     private static final int NONE = 0;
     private EnumMap<Coin, Integer> machineCoin = new EnumMap<>(Coin.class);
 
-    public void createRandomCoin(int money) {
+    public MachineCoin(int money) {
+        createRandomCoin(money);
+    }
+
+    private void createRandomCoin(int money) {
         List<Coin> coins = Coin.getCoins();
         for (Coin coin : coins) {
             int coinCount = generateRandomCoinCount(coin, money);
@@ -18,7 +22,7 @@ public class MachineCoin {
             money = calculateRemainMoney(money, coin, coinCount);
         }
         Coin minimumCoin = Coin.getMinimumCoin();
-        machineCoin.put(minimumCoin, machineCoin.get(minimumCoin)+ convertRemainMoney(minimumCoin, money));
+        machineCoin.put(minimumCoin, machineCoin.get(minimumCoin) + convertRemainMoney(minimumCoin, money));
     }
 
     private int generateRandomCoinCount(Coin coin, int money) {
