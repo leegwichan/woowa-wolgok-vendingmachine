@@ -27,8 +27,8 @@
 - [x] 구매할 상품명 입력 -> readProductName
 
 ### 출력 관련 -> OutputView
-- [ ] 자판기가 보유한 동전을 출력 -> printVendingMachineCoin
-- [ ] 남은 금액 출력 -> printRemainMoney
+- [x] 자판기가 보유한 동전을 출력 -> printVendingMachineCoin
+- [x] 남은 금액 출력 -> printRemainMoney
 
 ### 동전 객체 -> Coin Enum
 - [x] 동전 객체 생성 - from
