@@ -36,7 +36,7 @@ public enum Coin {
         return this.amount * count;
     }
 
-    private int getAmount() {
+    public int getAmount() {
         return amount;
     }
 

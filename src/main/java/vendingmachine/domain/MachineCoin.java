@@ -1,12 +1,13 @@
 package vendingmachine.domain;
 
 import vendingmachine.RandomNumber;
+import vendingmachine.domain.dto.CoinStatus;
 
 import java.util.EnumMap;
 import java.util.List;
 
 public class MachineCoin {
-    private EnumMap<Coin, Integer> machineCoin = new EnumMap<Coin, Integer>(Coin.class);
+    private EnumMap<Coin, Integer> machineCoin = new EnumMap<>(Coin.class);
 
     public void createRandomCoin(int money) {
         List<Coin> coins = Coin.getCoins();
@@ -30,5 +31,9 @@ public class MachineCoin {
 
     private int convertRemainMoney(Coin coin, int money) {
         return coin.countOfCoinMakeByMoney(money);
+    }
+
+    public CoinStatus getCoinStatus() {
+        return new CoinStatus(machineCoin);
     }
 }

@@ -41,7 +41,7 @@
 
 ### 자판기 보유한 동전 객체 -> MachineCoin
 - [x] 랜덤 동전을 생성하는 기능 -> createRandomCoin
-- [ ] 보유한 동전 현황을 반환하는 기능 -> showCoinStatus
+- [x] 보유한 동전 현황을 반환하는 기능 -> getCoinStatus
 - [ ] 금액에 해당하는 동전을 반환하는 기능 -> returnCoin
   - 반환할 수 있는 만큼만 반환한다.
 
