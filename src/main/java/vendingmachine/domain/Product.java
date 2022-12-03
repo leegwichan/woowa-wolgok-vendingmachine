@@ -1,5 +1,6 @@
 package vendingmachine.domain;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Product {
@@ -10,12 +11,12 @@ public class Product {
     private final int price;
 
     private Product(String name, int price) {
+        validPrice(price);
         this.name = name;
         this.price = price;
     }
 
-    public Product of(String name, int price) {
-        validPrice(price);
+    public static Product of(String name, int price) {
         return new Product(name, price);
     }
 
@@ -34,6 +35,17 @@ public class Product {
         if (price % PRICE_UNIT != 0) {
             throw new IllegalArgumentException("[ERROR] 상품가격은 10원으로 나누어떨어져야 합니다.");
         }
+    }
+
+    public boolean canBuy(int money) {
+        if (money<price) {
+            return false;
+        }
+        return true;
+    }
+
+    public int getPrice() {
+        return price;
     }
 
     @Override

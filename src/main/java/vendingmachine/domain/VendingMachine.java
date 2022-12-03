@@ -24,6 +24,9 @@ public class VendingMachine {
         if (product.isEmpty()) {
             throw new IllegalArgumentException("[ERROR] 해당 상품이 존재하지 않습니다.");
         }
-        stock.minusStock(product.get());
+        if (product.get().canBuy(this.money)) {
+            stock.minusStock(product.get());
+            this.money -= product.get().getPrice();
+        }
     }
 }
