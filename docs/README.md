@@ -43,8 +43,9 @@
     - 모든 상품이 소진된 경우
 
 - InitialCoinCreator
-  - [ ] initializeCoinCondition()
-    - 초기 금액을 받아 Coin 조건을 생성함
+  - [x] initializeCoinCondition()
+    - 초기 금액을 받아 Coin 개수를 생성함
+    - 가장 작은 단위로 나누어 떨어지지 않을 경우 예외를 발생시킴
     - `camp.nextstep.edu.missionutils.Randoms.pickNumberInList()` 이용
 
 - Dto 객체들
