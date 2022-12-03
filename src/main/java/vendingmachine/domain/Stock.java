@@ -10,6 +10,11 @@ public class Stock {
     public void addStock(Product product, int amount) {
         stock.put(product, amount);
     }
+
+    public void minusStock(Product product) {
+        stock.put(product, stock.get(product)-1);
+    }
+
     public Optional<Product> findByName(String productName) {
         return stock.keySet().stream()
                 .filter(product -> product.equals(productName) && isExists(product))

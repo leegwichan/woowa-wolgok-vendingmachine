@@ -50,7 +50,7 @@
 
 ### 재고 객체 -> Stock
 - [x] 상품 수량을 추가하는 기능 -> addStock
-- [ ] 상품 수량을 감소하는 기능 -> minusStock
+- [x] 상품 수량을 감소하는 기능 -> minusStock
 - [x] 상품을 반환하는 기능 -> findByName
   - [x] 상품의 존재 여부를 확인하는 기능 -> isExists
 
