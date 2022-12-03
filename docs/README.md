@@ -34,7 +34,7 @@
 - [x] 동전 객체 생성 - from
 
 ### 자판기 객체 -> VendingMachine
-- [ ] 남은 금액 현황을 반환하는 기능 -> getRemainMoney
+- [x] 남은 금액 현황을 반환하는 기능 -> getRemainMoney
 - [x] 재고를 확인하여 판매하는 기능 -> sellProduct
 - [x] 잔돈을 돌려주는 기능 -> returnCoin
   - 남은 금액이 상품의 최저 가격보다 적거나, 모든 상품이 소진된 경우 바로 잔돈을 돌려준다.

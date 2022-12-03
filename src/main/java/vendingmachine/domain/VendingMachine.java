@@ -35,4 +35,8 @@ public class VendingMachine {
     public CoinStatus returnCoin() {
         return machineCoin.returnCoin(this.money);
     }
+
+    public int getRemainMoney() {
+        return this.money;
+    }
 }
