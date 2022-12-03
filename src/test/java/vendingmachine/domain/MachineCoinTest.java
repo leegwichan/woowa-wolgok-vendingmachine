@@ -5,9 +5,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import vendingmachine.domain.dto.CoinStatus;
 
+import java.util.HashMap;
 import java.util.Map;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class MachineCoinTest {
 
@@ -24,5 +23,18 @@ class MachineCoinTest {
             result += (coin*coinStatus.get(coin));
         }
         Assertions.assertThat(result).isEqualTo(money);
+    }
+
+    @DisplayName("가장 큰 금액으로 잔돈을 반환한다.")
+    @Test
+    void returnCoin() {
+        MachineCoin machineCoin = new MachineCoin();
+        CoinStatus coinStatus = machineCoin.returnCoin(1600);
+        Map<Integer, Integer> result = coinStatus.getCoinStatus();
+
+        Map<Integer, Integer> expected = new HashMap<>();
+        expected.put(500, 3);
+        expected.put(100, 1);
+        Assertions.assertThat(result).isEqualTo(expected);
     }
 }
