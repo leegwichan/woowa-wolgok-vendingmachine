@@ -1,5 +1,7 @@
 package vendingmachine.domain;
 
+import vendingmachine.domain.dto.CoinStatus;
+
 import java.util.Optional;
 
 public class VendingMachine {
@@ -28,5 +30,9 @@ public class VendingMachine {
             stock.minusStock(product.get());
             this.money -= product.get().getPrice();
         }
+    }
+
+    public CoinStatus returnCoin() {
+        return machineCoin.returnCoin(this.money);
     }
 }
