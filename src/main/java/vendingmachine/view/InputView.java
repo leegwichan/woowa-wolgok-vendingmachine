@@ -60,4 +60,10 @@ public class InputView {
             throw new IllegalArgumentException("[ERROR] 가격과 수량은 숫자로 입력해야 합니다.");
         }
     }
+
+    public int readMoney() {
+        String money = Console.readLine();
+        validIsNumber(money);
+        return Integer.parseInt(money);
+    }
 }

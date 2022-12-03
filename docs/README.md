@@ -23,7 +23,7 @@
 - [x] 자판기가 보유하고 있는 금액 입력 -> readVendingMachineMoney
 - [x] 상품의 이름, 가격, 수량을 입력 -> readProductInfo
   - 상품명, 가격, 수량은 쉼표로, 개별 상품은 대괄호([])로 묶어 세미콜론(;)으로 구분한다.
-- [ ] 투입 금액 입력 -> readMoney
+- [x] 투입 금액 입력 -> readMoney
 - [ ] 구매할 상품명 입력 -> readProductName
 
 ### 출력 관련 -> OutputView
