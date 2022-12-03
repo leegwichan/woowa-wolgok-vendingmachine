@@ -30,9 +30,10 @@
   - [x] getName()
 
 - VendingMachine
-  - [x] 상품 등록 #enrollGoods
+  - [x] 상품 등록 #enrollGoods()
     - 상품의 이름이 중복되는지 확인
     - 이미 등록 되었는지 확인
+  - [x] 금액 넣기 #addInputPrice()
   - [ ] 보유 동전 주기 #getCoins()
   - [ ] 구매 기능 #buyGoods()
     - 상품의 이름이 있는지 확인

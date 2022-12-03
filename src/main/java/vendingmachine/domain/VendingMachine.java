@@ -9,6 +9,7 @@ public class VendingMachine {
 
     private final LinkedHashMap<Coin, Integer> coins;
     private List<Goods> goods;
+    private int inputPrice = 0;
 
     VendingMachine(List<Coin> coinTypes, int amount) {
         coins = new InitialCoinCreator(coinTypes).initializeCoinCondition(amount);
@@ -22,6 +23,10 @@ public class VendingMachine {
             throw new IllegalArgumentException(ExceptionMessage.GOODS_OVERLAPPED.getMessage());
         }
         this.goods = goods;
+    }
+
+    public void addInputPrice(int price) {
+        inputPrice += price;
     }
 
     private boolean isGoodsOverlapped(List<Goods> goods) {
