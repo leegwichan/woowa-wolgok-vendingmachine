@@ -13,7 +13,7 @@ public class InputView {
         System.out.println("자판기가 보유하고 있는 금액을 입력해 주세요.");
         String money = Console.readLine();
         validIsNumber(money);
-        return Integer.parseInt(Console.readLine());
+        return Integer.parseInt(money);
     }
 
     private void validIsNumber(String value) {
@@ -54,7 +54,8 @@ public class InputView {
     }
 
     private void validProductInfoValueType(String info) {
-        String[] split = info.split(Constant.PRODUCT_INFO_DELIMITER);
+        String[] split = info.substring(1, info.length()-1)
+                .split(Constant.PRODUCT_INFO_DELIMITER);
         try {
             validIsNumber(split[Constant.PRODUCT_PRICE_INDEX]);
             validIsNumber(split[Constant.PRODUCT_AMOUNT_INDEX]);

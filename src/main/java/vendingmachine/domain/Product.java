@@ -55,10 +55,13 @@ public class Product {
 
     @Override
     public boolean equals(Object obj) {
-        if (!(obj instanceof Product)) {
+        if ((obj instanceof Product)) {
+            if (((Product) obj).name.equals(this.name)) {
+                return true;
+            }
             return false;
         }
-        if (((Product) obj).name.equals(this.name)) {
+        if (obj.equals(this.name)) {
             return true;
         }
         return false;

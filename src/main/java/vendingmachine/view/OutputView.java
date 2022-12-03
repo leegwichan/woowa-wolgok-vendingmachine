@@ -2,6 +2,7 @@ package vendingmachine.view;
 
 import vendingmachine.domain.dto.CoinStatus;
 
+import java.util.Comparator;
 import java.util.Map;
 
 public class OutputView {
@@ -10,13 +11,15 @@ public class OutputView {
 
     public void printVendingMachineCoin(CoinStatus status) {
         Map<Integer, Integer> coinStatus = status.getCoinStatus();
-        coinStatus.keySet().stream().sorted();
+        coinStatus.keySet().stream().sorted(Comparator.reverseOrder());
         for (Integer coin : coinStatus.keySet()) {
             System.out.printf(PRINT_COIN_FORMAT, coin, coinStatus.get(coin));
+            System.out.println();
         }
     }
 
     public void printRemainMoney(int money) {
         System.out.printf(PRINT_MONEY_FORMAT, money);
+        System.out.println();
     }
 }
