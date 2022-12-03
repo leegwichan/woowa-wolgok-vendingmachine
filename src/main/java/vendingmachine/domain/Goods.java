@@ -10,7 +10,7 @@ public class Goods {
     private final String name;
     private final int price;
 
-    Goods(String name, int price) {
+    public Goods(String name, int price) {
         validateName(name);
         validatePrice(price);
         this.name = name;

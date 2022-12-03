@@ -57,6 +57,9 @@
 - Dto 객체들
   - [x] GoodsDto (이름, 가격, 개수)
 
+- Mapper
+  - [x] #goodsDtosToGoods()
+
 - InputView
   - [ ] 자판기 보유 금액 입력 #readHoldingAmount()
   - [ ] 상품명과 가격, 수량 입력 #readGoods()
