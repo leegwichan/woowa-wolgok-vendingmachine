@@ -7,6 +7,7 @@ import java.util.EnumMap;
 import java.util.List;
 
 public class MachineCoin {
+    private static final int NONE = 0;
     private EnumMap<Coin, Integer> machineCoin = new EnumMap<>(Coin.class);
 
     public void createRandomCoin(int money) {
@@ -35,5 +36,18 @@ public class MachineCoin {
 
     public CoinStatus getCoinStatus() {
         return new CoinStatus(machineCoin);
+    }
+
+    public CoinStatus returnCoin(int money) {
+        EnumMap<Coin, Integer> result = new EnumMap<>(Coin.class);
+        List<Coin> coins = Coin.getCoins();
+        for (Coin coin : coins) {
+            int coinCount = coin.countOfCoinMakeByMoney(money);
+            if (coinCount != NONE) {
+                result.put(coin, coinCount);
+                money = calculateRemainMoney(money, coin, coinCount);
+            }
+        }
+        return new CoinStatus(result);
     }
 }
