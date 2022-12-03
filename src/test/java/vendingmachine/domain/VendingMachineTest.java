@@ -4,13 +4,19 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class VendingMachineTest {
 
-    private final List<Goods> NORMAL_GOODS = List.of(
-            new Goods("사이다", 100),
-            new Goods("콜라", 150));
+    private final Map<Goods, Integer> NORMAL_GOODS;
+
+    VendingMachineTest() {
+        NORMAL_GOODS = new HashMap();
+        NORMAL_GOODS.put(new Goods("사이다", 100), 1);
+        NORMAL_GOODS.put(new Goods("콜라", 150), 1);
+    }
 
     VendingMachine newVendingMachine() {
         return new VendingMachine(
@@ -30,9 +36,9 @@ public class VendingMachineTest {
     @Test
     void enrollGoodsTest_WhenGoodsOverLapped() {
         VendingMachine vendingMachine = newVendingMachine();
-        List<Goods> overlappedGoods = List.of(
-                new Goods("사이다", 100),
-                new Goods("사이다", 150));
+        Map<Goods, Integer> overlappedGoods = new HashMap<>();
+        overlappedGoods.put(new Goods("사이다", 100), 1);
+        overlappedGoods.put(new Goods("사이다", 150), 1);
 
         assertThrows(IllegalArgumentException.class, () -> {
             vendingMachine.enrollGoods(overlappedGoods);

@@ -4,22 +4,24 @@ import vendingmachine.exception.ExceptionMessage;
 import vendingmachine.helper.InitialCoinCreator;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class VendingMachine {
 
     private final LinkedHashMap<Coin, Integer> coins;
-    private List<Goods> goods;
+    private Map<Goods, Integer> goods;
     private int inputPrice = 0;
 
     VendingMachine(List<Coin> coinTypes, int amount) {
         coins = new InitialCoinCreator(coinTypes).initializeCoinCondition(amount);
     }
 
-    public void enrollGoods(List<Goods> goods) {
+    public void enrollGoods(Map<Goods, Integer> goods) {
         if (isGoodsEnrolled()) {
             throw new IllegalArgumentException(ExceptionMessage.GOODS_ALREADY_ENROLLED.getMessage());
         }
-        if (isGoodsOverlapped(goods)) {
+        if (isGoodsOverlapped(goods.keySet())) {
             throw new IllegalArgumentException(ExceptionMessage.GOODS_OVERLAPPED.getMessage());
         }
         this.goods = goods;
@@ -30,7 +32,7 @@ public class VendingMachine {
     }
 
     public void buyGoods(String goodsName) {
-        for (Goods singleGoods : goods) {
+        for (Goods singleGoods : goods.keySet()) {
             if (singleGoods.isEqualName(goodsName)) {
                 buyGoods(singleGoods);
                 return;
