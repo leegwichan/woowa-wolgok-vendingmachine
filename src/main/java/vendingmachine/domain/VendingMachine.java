@@ -13,7 +13,7 @@ public class VendingMachine {
     private Map<Goods, Integer> goods;
     private int inputPrice = 0;
 
-    VendingMachine(List<Coin> coinTypes, int amount) {
+    public VendingMachine(List<Coin> coinTypes, int amount) {
         coins = new InitialCoinCreator(coinTypes).initializeCoinCondition(amount);
     }
 
@@ -77,6 +77,10 @@ public class VendingMachine {
 
     private boolean isGoodsEnrolled() {
         return this.goods != null;
+    }
+
+    public LinkedHashMap<Coin, Integer> getChanges() {
+        return null;
     }
 
     public LinkedHashMap<Coin, Integer> getCoins() {

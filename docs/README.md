@@ -55,11 +55,10 @@
     - `camp.nextstep.edu.missionutils.Randoms.pickNumberInList()` 이용
 
 - Dto 객체들
-  - [ ] GoodsDto (이름, 가격)
-  - [ ] CoinsDto ()
+  - [x] GoodsDto (이름, 가격, 개수)
 
 - InputView
-  - [ ] 자판기 보유 금액 입력 #readHodingAmount()
+  - [ ] 자판기 보유 금액 입력 #readHoldingAmount()
   - [ ] 상품명과 가격, 수량 입력 #readGoods()
   - [ ] 투입 금액 입력 #readInputAmount()
   - [ ] 구매할 상품명 입력 #readGoodsName()
