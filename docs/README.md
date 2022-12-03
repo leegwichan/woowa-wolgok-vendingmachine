@@ -18,7 +18,7 @@
 ## Class(객체)별 구현할 기능 목혹
 
 - Coin
-  - [ ] getAmount()
+  - [x] getAmount()
 
 - Goods
   - [ ] 생성시 조건 확인 #Goods(이름, 가격)
