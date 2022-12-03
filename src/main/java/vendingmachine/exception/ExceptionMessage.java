@@ -10,7 +10,9 @@ public enum ExceptionMessage {
     GOODS_OVERLAPPED("상품의 이름이 중복되었습니다."),
     GOODS_NOT_EXIST("상품이 존재하지 않습니다."),
     GOODS_OVER_PRICE("상품 가격이 투입 금액보다 높습니다."),
-    GOODS_SOLD_OUT("해당 상품은 이미 품절되었습니다.")
+    GOODS_SOLD_OUT("해당 상품은 이미 품절되었습니다."),
+
+    NOT_INTEGER("양수를 입력하여야 합니다."),
     ;
 
     ExceptionMessage(String message) {
