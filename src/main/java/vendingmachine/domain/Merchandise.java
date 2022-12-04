@@ -8,9 +8,16 @@ public class Merchandise {
 
     public Merchandise(String name, Money price, int stock) {
         validateStock(stock);
+        validateName(name);
         this.name = name;
         this.price = price;
         this.stock = stock;
+    }
+
+    private void validateName(String name) {
+        if (name.length() < 1) {
+            throw new IllegalArgumentException();
+        }
     }
 
     private void validateStock(int stock) {
@@ -37,4 +44,5 @@ public class Merchandise {
     public String getName() {
         return name;
     }
+
 }

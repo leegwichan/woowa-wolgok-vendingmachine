@@ -78,8 +78,7 @@ public class VendingMachine {
     }
 
     private Optional<Coin> maxCoin(int leftMoney) {
-        return Arrays.stream(Coin.values())
-                .filter(coin -> coins.getOrDefault(coin, 0) > 0)
+        return coins.keySet().stream()
                 .filter(coin -> leftMoney > coin.amount())
                 .max(Comparator.comparingInt(Coin::amount));
     }
