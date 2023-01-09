@@ -79,7 +79,7 @@
     ```text
     투입 금액: 3000원
     ```
-  - [ ] 잔돈 출력 #printChanges()
+  - [x] 잔돈 출력 #printChanges()
     ```text
     잔돈
     100원 - 4개

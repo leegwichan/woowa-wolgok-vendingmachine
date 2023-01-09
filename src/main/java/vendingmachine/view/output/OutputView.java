@@ -6,6 +6,8 @@ import java.util.LinkedHashMap;
 public class OutputView {
 
     private final static String INPUT_AMOUNT_FORM = "투입 금액: %d원";
+    private final static String COIN_AMOUNT_FORM = "%d원 - %d개";
+    private final static String CHANGES = "잔돈";
 
     public static void printHoldingCoins(LinkedHashMap<Coin, Integer> holdingCoins) {
 
@@ -16,7 +18,14 @@ public class OutputView {
     }
 
     public static void printChanges(LinkedHashMap<Coin, Integer> changes) {
+        print(CHANGES);
+        printCoins(changes);
+    }
 
+    private static void printCoins(LinkedHashMap<Coin, Integer> coins) {
+        for (Coin coin : coins.keySet()) {
+            print(String.format(COIN_AMOUNT_FORM, coin.getAmount(), coins.get(coin)));
+        }
     }
 
     public static void printErrorMessage(Exception exception) {
