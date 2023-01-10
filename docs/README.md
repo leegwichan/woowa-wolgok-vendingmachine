@@ -67,7 +67,7 @@
   - [x] 구매할 상품명 입력 #readGoodsName()
 
 - OutputView
-  - [ ] 자판기 보유 동전 출력 #printHodingCoins()
+  - [x] 자판기 보유 동전 출력 #printHodingCoins()
     ```text
     자판기가 보유한 동전
     500원 - 0개

@@ -25,4 +25,18 @@ public class OutputViewTest extends PrintTestTool {
 
         assertThat(output()).contains("잔돈", "100원 - 4개", "50원 - 1개");
     }
+
+    @Test
+    void printHoldingCoinsTest() {
+        LinkedHashMap<Coin, Integer> coins = new LinkedHashMap<>();
+        coins.put(Coin.COIN_500, 0);
+        coins.put(Coin.COIN_100, 4);
+        coins.put(Coin.COIN_50, 1);
+        coins.put(Coin.COIN_10, 0);
+
+        OutputView.printHoldingCoins(coins);
+
+        assertThat(output()).contains(
+                "자판기가 보유한 동전", "500원 - 0개", "100원 - 4개", "50원 - 1개", "10원 - 0개");
+    }
 }

@@ -7,10 +7,12 @@ public class OutputView {
 
     private final static String INPUT_AMOUNT_FORM = "투입 금액: %d원";
     private final static String COIN_AMOUNT_FORM = "%d원 - %d개";
+    private final static String HOLDING_COINS = "자판기가 보유한 동전";
     private final static String CHANGES = "잔돈";
 
     public static void printHoldingCoins(LinkedHashMap<Coin, Integer> holdingCoins) {
-
+        print(HOLDING_COINS);
+        printCoins(holdingCoins);
     }
 
     public static void printInputAmount(int inputAmount) {
