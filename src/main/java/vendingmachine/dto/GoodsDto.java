@@ -23,4 +23,18 @@ public class GoodsDto {
     public int getAmount() {
         return amount;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (o instanceof GoodsDto
+                && ((GoodsDto) o).getName().equals(name)
+                && ((GoodsDto) o).getPrice() == price
+                && ((GoodsDto) o).getAmount() == amount) {
+            return true;
+        }
+        return false;
+    }
 }
