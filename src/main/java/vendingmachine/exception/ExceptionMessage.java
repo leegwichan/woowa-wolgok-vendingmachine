@@ -13,6 +13,9 @@ public enum ExceptionMessage {
     GOODS_SOLD_OUT("해당 상품은 이미 품절되었습니다."),
 
     NOT_INTEGER("양수를 입력하여야 합니다."),
+    GOODS_FORM_INCORRECT("상품 형식이 올바르지 않습니다."),
+    GOODS_NAME_INCORRECT("상품 이름이 한 글자 이상이어야 합니다."),
+    GOODS_PRICE_COUNT_INCORRECT("상품 가격과 상품 개수는 숫자이어야 합니다."),
     ;
 
     ExceptionMessage(String message) {

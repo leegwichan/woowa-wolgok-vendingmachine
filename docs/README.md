@@ -59,6 +59,8 @@
 
 - Mapper
   - [x] #goodsDtosToGoods()
+  - [x] #inputFormToGoodsDtos()
+    - "[콜라,1500,20];[사이다,1000,10]" 형식을 GoodsDtoList로 바꿈
 
 - InputView
   - [x] 자판기 보유 금액 입력 #readHoldingAmount()
