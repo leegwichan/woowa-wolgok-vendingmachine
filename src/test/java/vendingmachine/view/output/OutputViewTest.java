@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
 import vendingmachine.domain.Coin;
+import vendingmachine.view.PrintTestTool;
 import java.util.LinkedHashMap;
 
 public class OutputViewTest extends PrintTestTool {

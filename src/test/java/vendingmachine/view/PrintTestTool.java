@@ -1,4 +1,4 @@
-package vendingmachine.view.output;
+package vendingmachine.view;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
