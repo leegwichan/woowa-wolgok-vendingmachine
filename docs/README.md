@@ -64,7 +64,11 @@
 
 - InputView
   - [x] 자판기 보유 금액 입력 #readHoldingAmount()
-  - [ ] 상품명과 가격, 수량 입력 #readGoods()
+  - [x] 상품명과 가격, 수량 입력 #readGoods()
+      ```
+      상품명과 가격, 수량을 입력해 주세요.
+      [콜라,1500,20];[사이다,1000,10]
+      ```
   - [x] 투입 금액 입력 #readInputAmount()
   - [x] 구매할 상품명 입력 #readGoodsName()
 

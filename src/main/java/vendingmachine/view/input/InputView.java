@@ -3,11 +3,13 @@ package vendingmachine.view.input;
 import camp.nextstep.edu.missionutils.Console;
 import vendingmachine.dto.GoodsDto;
 import vendingmachine.exception.ExceptionMessage;
+import vendingmachine.mapper.Mapper;
 import java.util.List;
 
 public class InputView {
 
     private static final String REQUEST_HOLDING_AMOUNT = "\n자판기가 보유하고 있는 금액을 입력해 주세요.";
+    private static final String REQUEST_GOODS = "\n상품명과 가격, 수량을 입력해 주세요.";
     private static final String REQUEST_INPUT_AMOUNT = "\n투입 금액을 입력해 주세요.";
     private static final String REQUEST_GOODS_NAME = "구매할 상품명을 입력해 주세요.";
 
@@ -17,7 +19,9 @@ public class InputView {
     }
 
     public static List<GoodsDto> readGoods() {
-        return null;
+        print(REQUEST_GOODS);
+        String input = read();
+        return Mapper.inputFormToGoodsDtos(input);
     }
 
     public static int readInputAmount() {
